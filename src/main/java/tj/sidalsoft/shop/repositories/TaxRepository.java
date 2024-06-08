@@ -1,5 +1,6 @@
 package tj.sidalsoft.shop.repositories;
 
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import tj.sidalsoft.shop.entities.Tax;
@@ -11,4 +12,5 @@ public interface TaxRepository extends JpaRepository<Tax, Long> {
 
     boolean existsByCountry(String country);
 
+    Optional<Tax> findByCode(String code);
 }

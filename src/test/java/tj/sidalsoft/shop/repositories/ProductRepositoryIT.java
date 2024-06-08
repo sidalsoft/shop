@@ -16,7 +16,9 @@ class ProductRepositoryIT {
 
     @Test
     void findById() {
-        var result = repository.findById(1);
+        var res = repository.findById(1);
+        assertTrue(res.isPresent());
+        var result = res.get();
         assertNotNull(result);
         assertAll(() -> {
             assertNotNull(result.getName());
@@ -26,7 +28,7 @@ class ProductRepositoryIT {
 
     @Test
     void existsByName() {
-        var existEntity = repository.findById(1);
+        var existEntity = repository.findById(1).get();
 
         var result = repository.existsByName(existEntity.getName());
         assertTrue(result);

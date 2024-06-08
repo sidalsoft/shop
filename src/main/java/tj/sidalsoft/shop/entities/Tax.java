@@ -21,6 +21,9 @@ public class Tax {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "code")
+    private String code;
+
     @Column(name = "country")
     private String country;
 

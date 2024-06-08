@@ -29,6 +29,7 @@
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="pk_tax"/>
             </column>
+            <column name="code" type="VARCHAR(2)"/>
             <column name="country" type="VARCHAR(255)"/>
             <column name="percent" type="INT"/>
             <column name="number_formats" type="VARCHAR(255)"/>
