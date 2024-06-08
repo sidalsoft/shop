@@ -24,22 +24,22 @@
     </changeSet>
     <changeSet id="m-2" author="saidalisaburov">
         <insert tableName="tax">
-            <column name="name">Германия</column>
+            <column name="country">Германия</column>
             <column name="number_formats">\d{9}$</column>
             <column name="percent">19</column>
         </insert>
         <insert tableName="tax">
-            <column name="name">Италия</column>
+            <column name="country">Италия</column>
             <column name="number_formats">\d{11}$</column>
             <column name="percent">2</column>
         </insert>
         <insert tableName="tax">
-            <column name="name">Франция</column>
+            <column name="country">Франция</column>
             <column name="number_formats">\d{9}$</column>
             <column name="percent">20</column>
         </insert>
         <insert tableName="tax">
-            <column name="name">Греция</column>
+            <column name="country">Греция</column>
             <column name="number_formats">[a-zA-Z]{2}\d{9}$</column>
             <column name="percent">24</column>
         </insert>
