@@ -12,9 +12,9 @@ import tj.sidalsoft.shop.repositories.ProductRepository;
 import tj.sidalsoft.shop.repositories.TaxRepository;
 
 import static tj.sidalsoft.shop.utils.Constants.COUPON_NOT_FOUND;
-import static tj.sidalsoft.shop.utils.Constants.INVALID_TAX_NUMBER_FORMAT;
 import static tj.sidalsoft.shop.utils.Constants.PRODUCT_NOT_FOUND;
 import static tj.sidalsoft.shop.utils.Constants.TAX_NOT_FOUND;
+import static tj.sidalsoft.shop.utils.Constants.TAX_NUMBER_IS_INCORRECT;
 
 @RequiredArgsConstructor
 @Service
@@ -61,7 +61,7 @@ public class ProductServiceImpl implements ProductService {
         if (Pattern.compile(tax.getNumberFormats())
                    .asPredicate()
                    .test(taxNumber)) {
-            throw new RuntimeException(INVALID_TAX_NUMBER_FORMAT);
+            throw new RuntimeException(TAX_NUMBER_IS_INCORRECT);
         }
         return tax;
     }

@@ -10,14 +10,13 @@ import tj.sidalsoft.shop.utils.Constants;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 class ProductServiceIT {
 
     Map<Integer, String> error = Map.of(1, Constants.PRODUCT_NOT_FOUND,
                                         2, Constants.TAX_NOT_FOUND,
-                                        3, Constants.INVALID_TAX_NUMBER_FORMAT,
+                                        3, Constants.TAX_NUMBER_IS_INCORRECT,
                                         4, Constants.COUPON_NOT_FOUND);
 
     @Autowired
@@ -25,9 +24,9 @@ class ProductServiceIT {
 
     @Test
     void calculatePrice() {
-
+        var expectedResult = 91.8;
         var result = productService.calculatePrice(1, "DE123456789", "D15");
-        assertTrue(result > 0);
+        assertEquals(expectedResult, result);
     }
 
     @ParameterizedTest

@@ -16,3 +16,8 @@ spring:
 
   liquibase:
     change-log: classpath:/liquibase/changelog.xml
+
+  jackson:
+    default-property-inclusion: NON_NULL
+server:
+  port: 8081
