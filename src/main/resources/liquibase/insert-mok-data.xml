@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.27.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="m-1" author="saidalisaburov">
+        <insert tableName="coupon">
+            <column name="name">D15</column>
+            <column name="amount">15</column>
+            <column name="type">D</column>
+        </insert>
+        <insert tableName="coupon">
+            <column name="name">P10</column>
+            <column name="amount">10</column>
+            <column name="type">P</column>
+        </insert>
+        <insert tableName="coupon">
+            <column name="name">P100</column>
+            <column name="amount">100</column>
+            <column name="type">P</column>
+        </insert>
+    </changeSet>
+    <changeSet id="m-2" author="saidalisaburov">
+        <insert tableName="tax">
+            <column name="name">Германия</column>
+            <column name="number_formats">\d{9}$</column>
+            <column name="percent">19</column>
+        </insert>
+        <insert tableName="tax">
+            <column name="name">Италия</column>
+            <column name="number_formats">\d{11}$</column>
+            <column name="percent">2</column>
+        </insert>
+        <insert tableName="tax">
+            <column name="name">Франция</column>
+            <column name="number_formats">\d{9}$</column>
+            <column name="percent">20</column>
+        </insert>
+        <insert tableName="tax">
+            <column name="name">Греция</column>
+            <column name="number_formats">[a-zA-Z]{2}\d{9}$</column>
+            <column name="percent">24</column>
+        </insert>
+    </changeSet>
+    <changeSet id="m-3" author="saidalisaburov">
+        <insert tableName="product">
+            <column name="name">Iphone</column>
+            <column name="price">100</column>
+        </insert>
+        <insert tableName="product">
+            <column name="name">Наушники</column>
+            <column name="price">20</column>
+        </insert>
+        <insert tableName="product">
+            <column name="name">Чехол</column>
+            <column name="price">10</column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

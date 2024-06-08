@@ -15,7 +15,7 @@ services:
       - POSTGRES_PASSWORD=password
       - APP_DB_USER=postgres
       - APP_DB_PASS=postgres
-      - APP_DB_NAME=shopDb
+      - APP_DB_NAME=shop_db
     volumes:
       - ./db:/docker-entrypoint-initdb.d/
     ports:

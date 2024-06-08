@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.27.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1717851343597-1" author="saidalisaburov (generated)">
+        <createTable tableName="coupon">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_coupon"/>
+            </column>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="amount" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1717851343597-2" author="saidalisaburov (generated)">
+        <createTable tableName="product">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_product"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="price" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1717851343597-3" author="saidalisaburov (generated)">
+        <createTable tableName="tax">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_tax"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="percent" type="INT"/>
+            <column name="number_formats" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
