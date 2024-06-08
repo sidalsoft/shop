@@ -1,0 +1,22 @@
+﻿version: '3.5'
+services:
+  postgreSQL:
+    image: postgres
+    container_name: postgres-sql
+    hostname: postgres-sql
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+      - APP_DB_USER=postgres
+      - APP_DB_PASS=postgres
+      - APP_DB_NAME=shopDb
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/
+    ports:
+      - 5454:5432
