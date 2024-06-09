@@ -1,5 +1,20 @@
 ﻿version: '3.5'
 services:
+  backend:
+    image: 'shop:latest'
+    container_name: shop
+    hostname: shop
+    ports:
+      - "8080:8081"
+    build:
+      context: .
+    depends_on:
+      - postgreSQL
+    networks:
+      - shop-network
+    environment:
+      spring.datasource.url: "jdbc:postgresql://postgres-sql:5432/shop_db"
+
   postgreSQL:
     image: postgres
     container_name: postgres-sql
@@ -20,3 +35,10 @@ services:
       - ./db:/docker-entrypoint-initdb.d/
     ports:
       - 5454:5432
+    networks:
+      - shop-network
+
+networks:
+  shop-network:
+    name: shop-network
+    external: true
