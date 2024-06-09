@@ -26,8 +26,8 @@ public class ExceptionHandlerController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(dto);
     }
 
-    @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<ErrorDto> runtimeException(RuntimeException ex) {
+    @ExceptionHandler({RuntimeException.class, Exception.class})
+    public ResponseEntity<ErrorDto> runtimeException(Exception ex) {
 
         ErrorDto dto = new ErrorDto(HttpStatus.BAD_REQUEST, ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(dto);
